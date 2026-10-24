@@ -1,0 +1,258 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f3f5fb;
+    color: #252b3b;
+    min-height: 100vh;
+    padding: 40px 16px;
+}
+
+.container {
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 32px;
+    background: white;
+    border-radius: 18px;
+    box-shadow: 0 8px 30px rgba(30, 40, 80, 0.08);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.header h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: #303d70;
+}
+
+.header p {
+    color: #7b8192;
+    font-size: 15px;
+}
+
+.task-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 24px;
+}
+
+.task-form input {
+    flex: 1;
+    min-width: 0;
+    padding: 14px;
+    border: 1px solid #dce0eb;
+    border-radius: 9px;
+    outline: none;
+    font-size: 15px;
+}
+
+.task-form input:focus {
+    border-color: #596be8;
+    box-shadow: 0 0 0 3px rgba(89, 107, 232, 0.12);
+}
+
+button {
+    font: inherit;
+    cursor: pointer;
+    border: none;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.add-btn {
+    padding: 0 18px;
+    border-radius: 9px;
+    background: #596be8;
+    color: white;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.add-btn:hover {
+    background: #4355d0;
+}
+
+.task-summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.task-summary div {
+    background: #f5f6fc;
+    border-radius: 10px;
+    text-align: center;
+    padding: 16px 8px;
+}
+
+.task-summary span {
+    display: block;
+    font-size: 25px;
+    font-weight: bold;
+    color: #4658ce;
+    margin-bottom: 5px;
+}
+
+.task-summary small {
+    color: #747b8d;
+    font-size: 13px;
+}
+
+.filters {
+    display: flex;
+    gap: 8px;
+    border-bottom: 1px solid #e9ebf2;
+    padding-bottom: 15px;
+    margin-bottom: 12px;
+}
+
+.filter-btn {
+    padding: 9px 16px;
+    border-radius: 8px;
+    background: transparent;
+    color: #777e90;
+}
+
+.filter-btn:hover {
+    background: #f1f2fa;
+}
+
+.filter-btn.active {
+    background: #596be8;
+    color: white;
+}
+
+.task-list {
+    list-style: none;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 4px;
+    border-bottom: 1px solid #eef0f5;
+}
+
+.task-checkbox {
+    width: 19px;
+    height: 19px;
+    flex-shrink: 0;
+    accent-color: #596be8;
+    cursor: pointer;
+}
+
+.task-text {
+    flex: 1;
+    min-width: 0;
+    overflow-wrap: anywhere;
+    line-height: 1.5;
+}
+
+.task-item.completed .task-text {
+    text-decoration: line-through;
+    color: #9ba1af;
+}
+
+.status-label {
+    font-size: 11px;
+    padding: 5px 8px;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+
+.status-label.pending {
+    background: #fff3d8;
+    color: #9a6900;
+}
+
+.status-label.completed {
+    background: #ddf7e8;
+    color: #197647;
+}
+
+.delete-btn {
+    color: #dc5362;
+    background: #fff0f1;
+    padding: 8px 10px;
+    border-radius: 7px;
+    font-size: 13px;
+    flex-shrink: 0;
+}
+
+.delete-btn:hover {
+    background: #ffdbdf;
+}
+
+.empty-message {
+    text-align: center;
+    color: #9399a8;
+    padding: 30px 10px;
+    font-size: 14px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 24px;
+    color: #9399a8;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 20px 10px;
+    }
+
+    .container {
+        padding: 20px 15px;
+    }
+
+    .header h1 {
+        font-size: 27px;
+    }
+
+    .task-form {
+        flex-direction: column;
+    }
+
+    .task-form input,
+    .add-btn {
+        min-height: 45px;
+    }
+
+    .add-btn {
+        padding: 12px;
+    }
+
+    .filters {
+        gap: 4px;
+    }
+
+    .filter-btn {
+        flex: 1;
+        padding: 9px 6px;
+        font-size: 13px;
+    }
+
+    .task-item {
+        gap: 8px;
+    }
+
+    .status-label {
+        font-size: 10px;
+        padding: 4px 6px;
+    }
+
+    .delete-btn {
+        padding: 7px;
+    }
+}

@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <header class="header">
+            <h1>Task Manager</h1>
+            <p>Organize your day, one task at a time.</p>
+        </header>
+
+        <form id="taskForm" class="task-form">
+            <input
+                type="text"
+                id="taskInput"
+                placeholder="What needs to be done?"
+                maxlength="200"
+                autocomplete="off"
+                aria-label="Enter a new task"
+                required
+            >
+            <button type="submit" class="add-btn">+ Add Task</button>
+        </form>
+
+        <section class="task-summary">
+            <div>
+                <span id="totalCount">0</span>
+                <small>Total</small>
+            </div>
+            <div>
+                <span id="pendingCount">0</span>
+                <small>Pending</small>
+            </div>
+            <div>
+                <span id="completedCount">0</span>
+                <small>Completed</small>
+            </div>
+        </section>
+
+        <nav class="filters" aria-label="Filter tasks">
+            <button type="button" class="filter-btn active"
+                data-filter="all">All</button>
+            <button type="button" class="filter-btn"
+                data-filter="pending">Pending</button>
+            <button type="button" class="filter-btn"
+                data-filter="completed">Completed</button>
+        </nav>
+
+        <ul id="taskList" class="task-list"></ul>
+
+        <p id="emptyMessage" class="empty-message">
+            No tasks yet. Add your first task!
+        </p>
+
+        <footer>
+            Your tasks are saved automatically in this browser.
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
