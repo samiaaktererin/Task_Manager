@@ -1,67 +1,56 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task Manager</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Manager</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <main class="container">
-        <header class="header">
-            <h1>Task Manager</h1>
-            <p>Organize your day, one task at a time.</p>
-        </header>
+<div class="container">
+  <header class="header">
+    <h1>Task Manager</h1>
+    <p>Organize your day, one task at a time.</p>
+  </header>
 
-        <form id="taskForm" class="task-form">
-            <input
-                type="text"
-                id="taskInput"
-                placeholder="What needs to be done?"
-                maxlength="200"
-                autocomplete="off"
-                aria-label="Enter a new task"
-                required
-            >
-            <button type="submit" class="add-btn">+ Add Task</button>
-        </form>
+  <form id="task-form">
+    <div class="form-container">
+      <input type="text" id="task-input" placeholder="What needs to be done?" autocomplete="off">
+      <button type="submit" class="taskAdderButton">+ ADD Task</button>
+    </div>
+  </form>
 
-        <section class="task-summary">
-            <div>
-                <span id="totalCount">0</span>
-                <small>Total</small>
-            </div>
-            <div>
-                <span id="pendingCount">0</span>
-                <small>Pending</small>
-            </div>
-            <div>
-                <span id="completedCount">0</span>
-                <small>Completed</small>
-            </div>
-        </section>
+  <div class="status-counter">
+    <div class="total">
+      <p id="total-count">0</p>
+      <small>Total</small>
+    </div>
+    <div class="pending">
+      <p id="pending-count">0</p>
+      <small>Pending</small>
+    </div>
+    <div class="complete">
+      <p id="complete-count">0</p>
+      <small>Complete</small>
+    </div>
+  </div>
 
-        <nav class="filters" aria-label="Filter tasks">
-            <button type="button" class="filter-btn active"
-                data-filter="all">All</button>
-            <button type="button" class="filter-btn"
-                data-filter="pending">Pending</button>
-            <button type="button" class="filter-btn"
-                data-filter="completed">Completed</button>
-        </nav>
+  <div class="status-checker">
+    <button type="button" class="filter-btn active" data-filter="all">All</button>
+    <button type="button" class="filter-btn" data-filter="pending">Pending</button>
+    <button type="button" class="filter-btn" data-filter="completed">Completed</button>
+  </div>
 
-        <ul id="taskList" class="task-list"></ul>
+  <div id="task-list-container">
+    <p id="empty-message">No tasks yet. Add your first task!</p>
+    <ul id="task-list"></ul>
+  </div>
 
-        <p id="emptyMessage" class="empty-message">
-            No tasks yet. Add your first task!
-        </p>
+  <footer>
+    Your tasks are saved automatically in this browser.
+  </footer>
+</div>
 
-        <footer>
-            Your tasks are saved automatically in this browser.
-        </footer>
-    </main>
-
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
